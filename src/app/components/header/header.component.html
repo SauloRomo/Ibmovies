@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="IndexController">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand align-middle" href="#">
+            <img src="./assets/popCorn.png" width="120" height="100" class="d-inline-block " alt=""> IBMovies
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'all']" routerLinkActive="router-link-active">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'terror']" routerLinkActive="router-link-active">Terror</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'drama']" routerLinkActive="router-link-active">Drama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'adventure']" routerLinkActive="router-link-active">Adventure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'fantasy']" routerLinkActive="router-link-active">Fantasy</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'action']" routerLinkActive="router-link-active">Action</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'horror']" routerLinkActive="router-link-active">Horror</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'romance']" routerLinkActive="router-link-active">Romance</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'thriller']" routerLinkActive="router-link-active">Thriller</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'crime']" routerLinkActive="router-link-active">Crime</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['movies', 'family']" routerLinkActive="router-link-active">family</a>                    
+                </li>
+            </ul>
+            <app-search></app-search>
+        </div>
+    </nav>
+</header>
