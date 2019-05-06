@@ -1,4 +1,18 @@
-<form class="form-inline my-2 my-lg-0">
+<!--<form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type='search' placeholder="Search" ng-keyup='fetchUsers()'
       ng-click='searchboxClicked($event);' ng-model='searchText' placeholder='Enter text'><br>
-</form>
+</form>-->
+
+<section class="filter-wrapper">
+  <div class="keyword-wrapper form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" [formControl]="queryField" type="search" id="keyword" placeholder="Search for movies..." autofocus />
+  </div>
+  <ul class="filter-select">
+      <li *ngFor="let result of results" class="filter-select-list">
+        <a href="/movies-detail/{{result.id}}">
+        <img src="{{result.posterurl}}" alt="" width="60" height="70"
+        ><span class="movie-name">{{result.title}} ({{result.year}})</span>
+        </a>
+      </li>
+  </ul>
+</section>

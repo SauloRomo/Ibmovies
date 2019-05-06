@@ -1,0 +1,53 @@
+<div class="container-fluid movie" ng-controller="MovieController">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="card text-center">
+          <div class="card-header">
+            <h5 class="card-title">{{movie.title}} ({{movie.year}})</h5>
+            <ng-template [ngIf]="movie.imdbRating">
+              <button type="button" class="btn btn-primary" ng-if="movie.imdbRating">
+                IMDB Rating <span class="badge badge-light">{{movie.imdbRating}}</span>
+              </button>
+            </ng-template>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <img lass="media-object" src="{{movie.posterurl}}" onerror="this.src='./assets/errorImage.gif'">
+              </div>
+              <div class="col-lg-6">
+                <p>{{movie.storyline}}</p>
+                <p>
+                  <b>Stars:</b>
+                  <span *ngFor="let actor of movie.actors">
+                    {{actor}}{{isLast ? '' : ', '}}
+                  </span>
+                </p>
+                <p>
+                  <b>Genres</b>
+                  <span *ngFor="let genre of movie.genres">
+                    {{isFirst ? '' : isLast ? ' | ' : ' | '}} <a href="/movies/{{genre}}">{{genre}} </a></span>
+                </p>
+                <p>
+                  <b>
+                    Public Rating:
+                  </b>
+                </p>
+                <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                  </span>
+                </ng-template>
+                <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="10"></ngb-rating>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

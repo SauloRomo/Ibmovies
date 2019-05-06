@@ -1,19 +1,16 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="IndexController">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarTogglerDemo03"  aria-label="Toggle navigation" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand align-middle" href="#">
             <img src="./assets/popCorn.png" width="120" height="100" class="d-inline-block " alt=""> IBMovies
         </a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03"  [class.collapse]="navbarCollapsed">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                     <a class="nav-link"[routerLink]="['movies', 'all']" routerLinkActive="router-link-active">All</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"[routerLink]="['movies', 'terror']" routerLinkActive="router-link-active">Terror</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"[routerLink]="['movies', 'drama']" routerLinkActive="router-link-active">Drama</a>

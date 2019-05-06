@@ -6,12 +6,16 @@ import  { ActivatedRoute } from '@angular/router'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public nGenre;
+  nGenre : String;
+  navbarCollapsed: Boolean = true; 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     let genre = this.route.snapshot.paramMap.get('genre');
     this.nGenre = genre;
+  }
+  toggleNavbarCollapsing() {
+    this.navbarCollapsed = !this.navbarCollapsed;
   }
 
 }
